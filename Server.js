@@ -6,6 +6,8 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
+const PORT = process.env.PORT || 8080;
+
 let offices = [
   {
     name: "Bangalore",
@@ -108,6 +110,6 @@ app.post("/upvote", (req, res) => {
   return broadCast(offices);
 });
 
-app.listen("3030", () => {
+app.listen(PORT, () => {
   console.log("Server started");
 });
